@@ -19,6 +19,7 @@ void MainWindow::on_button_Clear_clicked()
     ui->input_Login->clear();
     ui->input_Password->clear();
     ui-> statusbar->showMessage("Поля очищены");
+
 }
 
 
@@ -35,10 +36,8 @@ void MainWindow::on_button_Submit_clicked()
     db = QSqlDatabase::addDatabase("SQLITE");
     db.setDatabaseName("Test_Repo.sqlite");
     db.open();
-    
-    QString sql = ""
+
+    QString sql = "SELECT login FROM table_account WHERE login = '" + login + "' AND password = '" + password + "' AND is_active = 1;";
     QSqlQuery query;
     query.exec(sql);
-    
-    
-}
+
