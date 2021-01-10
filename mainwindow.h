@@ -3,6 +3,13 @@
 
 #include <QMainWindow>
 
+#include "QtSql/QSqlDatabase"
+
+#include "QtSql/QSqlQuery"
+
+
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -20,6 +27,8 @@ private slots:
 
     void on_button_Cancel_clicked();
 
+    void on_button_Submit_clicked();
+    
 private:
     Ui::MainWindow *ui;
 };

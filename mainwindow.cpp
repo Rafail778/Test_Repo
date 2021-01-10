@@ -26,3 +26,19 @@ void MainWindow::on_button_Cancel_clicked()
 {
     QWidget::close();
 }
+
+void MainWindow::on_button_Submit_clicked()
+{
+    QString login = ui->input_Login->text();
+    QString password = ui->input_Password->text();
+    QSqlDatabase db;
+    db = QSqlDatabase::addDatabase("SQLITE");
+    db.setDatabaseName("Test_Repo.sqlite");
+    db.open();
+    
+    QString sql = ""
+    QSqlQuery query;
+    query.exec(sql);
+    
+    
+}
