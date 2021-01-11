@@ -33,7 +33,7 @@ void MainWindow::on_button_Submit_clicked()
     QString login = ui->input_Login->text();
     QString password = ui->input_Password->text();
     QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("SQLITE");
+    db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("Test_Repo.sqlite");
     db.open();
 
@@ -41,3 +41,12 @@ void MainWindow::on_button_Submit_clicked()
     QSqlQuery query;
     query.exec(sql);
 
+    if (query.next())
+    {
+        ui->statusbar->showMessage("Вход разрешен");
+
+    } else {
+        ui->statusbar->showMessage("Вход запрещен");
+    }
+
+}
